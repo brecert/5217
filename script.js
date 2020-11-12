@@ -32,7 +32,7 @@ const pause = () => document.body.classList.add("paused");
 const unpause = () => document.body.classList.remove("paused");
 
 const genTitle = () => {
-  let text = `${timeLeft}m work remaining`;
+  let text = `${timeLeft}m ${timeType} remaining`;
   if (isPaused()) {
     text += ` (paused)`;
   }
