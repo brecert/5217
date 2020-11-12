@@ -1,0 +1,152 @@
+:root {
+  --primary-color-light: #75acff;
+  --text-color-light: #fff;
+
+  --primary-color-dark: #452d5f;
+  --text-color-dark: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: var(--primary-color-dark);
+    --text-color: var(--text-color-dark);
+  }
+}
+
+body.dark {
+  --primary-color: var(--primary-color-dark);
+  --text-color: var(--text-color-dark);
+}
+
+body.light {
+  --primary-color: var(--primary-color-light);
+  --text-color: var(--text-color-light);
+}
+
+html {
+  font-family: "Inter var", sans-serif;
+  font-size: 1.5rem;
+}
+
+html,
+body {
+  margin: 0;
+  height: 75vh;
+}
+
+body {
+  margin-top: 20vh;
+  background: var(--primary-color);
+  color: var(--text-color);
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.settings {
+  cursor: pointer;
+  user-select: none;
+}
+
+.settings .content {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+
+.settings summary::marker {
+  content: "";
+  visibility: hidden;
+}
+
+.settings label {
+  font-size: 0.75rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  align-self: flex-end;
+}
+
+.time {
+  font-size: 3rem;
+}
+
+.paused-text {
+  visibility: hidden;
+}
+
+.controls {
+  align-self: center;
+
+  display: flex;
+  place-content: center;
+}
+
+.play-icon {
+  visibility: hidden;
+}
+
+/* PAUSED */
+
+.paused .info {
+  opacity: 0.6;
+}
+
+.paused .paused-text {
+  visibility: visible;
+}
+
+.paused .play-icon {
+  visibility: visible;
+}
+
+.paused .pause-icon {
+  visibility: hidden;
+}
+
+button {
+  width: 3rem;
+  height: 3rem;
+
+  margin: 0;
+
+  background: transparent;
+  color: var(--text-color);
+
+  cursor: pointer;
+
+  border: 0px solid rgb(230, 159, 54);
+  border-width: 0;
+  border-radius: 100%;
+  outline: none;
+
+  text-align: center;
+  vertical-align: middle;
+
+  transition: background 250ms ease-in-out, color 250ms ease-in-out,
+    transform 150ms ease, border-width 150ms ease;
+}
+
+button:hover,
+button:focus {
+  background: var(--text-color);
+  color: var(--primary-color);
+}
+
+button:focus {
+  border: 5px solid rgb(230, 159, 54);
+}
+
+button:active {
+  transform: scale(0.99);
+}

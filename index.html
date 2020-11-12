@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>52m work remaining (paused)</title>
+  <link href="./style.css" rel="stylesheet" />
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="info">
+    <time class="time" datetime="52m" title="52 minutes remaining">52</time>
+    <label for="time">work <span class="paused-text">(paused)</span></label>
+  </div>
+  <div class="controls">
+    <button class="pause-play" title="start timer">
+      <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+        <use
+          href="/dashicons/controls-play.svg#controls-play"
+          class="play-icon"
+          width="20"
+          height="20"
+        ></use>
+        <use
+          href="/dashicons/controls-pause.svg#controls-pause"
+          class="pause-icon"
+          width="20"
+          height="20"
+        ></use>
+      </svg></button
+    ><button class="reset" title="reset timer">
+      <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+        <use href="/dashicons/backup.svg#backup" width="20" height="20"></use>
+      </svg>
+    </button>
+  </div>
+  <details class="settings">
+    <summary title="settings"><span class="dot">...</span></summary>
+    <div class="content">
+      <label for="theme-select">theme:</label>
+      <select id="theme-select">
+        <option value="default">follow system</option>
+        <option value="light">light</option>
+        <option value="dark">dark</option>
+      </select>
+    </div>
+  </details>
+</body>
