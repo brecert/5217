@@ -1,9 +1,12 @@
 :root {
-  --primary-color-light: #75acff;
-  --text-color-light: #fff;
+  --primary-color-light: #efefef;
+  --text-color-light: #222;
 
   --primary-color-dark: #452d5f;
   --text-color-dark: #fff;
+
+  --primary-color: var(--primary-color-light);
+  --text-color: var(--text-color-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,12 +38,13 @@ body {
 }
 
 body {
-  margin-top: 20vh;
+  margin-top: 10vh;
   background: var(--primary-color);
   color: var(--text-color);
 
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 7.5rem;
   justify-content: center;
 }
 
@@ -67,14 +71,20 @@ body {
 .dot {
   display: inline-block;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .info {
   display: flex;
-  flex-direction: column;
+  /* place-content: center; */
 
   align-self: flex-end;
+}
+
+.info label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .time {
@@ -87,9 +97,10 @@ body {
 
 .controls {
   align-self: center;
+  /* gap: 1rem; */
 
   display: flex;
-  place-content: center;
+  place-content: flex-end;
 }
 
 .play-icon {
@@ -127,7 +138,7 @@ button {
 
   border: 0px solid rgb(230, 159, 54);
   border-width: 0;
-  border-radius: 100%;
+  /* border-radius: 100%; */
   outline: none;
 
   text-align: center;
