@@ -2,6 +2,7 @@ const visualTimer = document.querySelector(".time");
 const pauseButton = document.querySelector(".pause-play");
 const resetButton = document.querySelector(".reset");
 const themeSelect = document.getElementById("theme-select");
+const timeWorkType = document.getElementById("time-work-type");
 
 const MINUTE = 60000;
 const WORKTIME = 52;
@@ -43,6 +44,7 @@ const update = () => {
   visualTimer.textContent = timeLeft;
   visualTimer.title = `${timeLeft} minute(s) of ${timeType} remaining`;
   visualTimer.datetime = `${timeLeft}m`;
+  timeWorkType.textContent = timeType
   document.title = genTitle();
   if (intervals[timeType].includes(timeLeft) && !isPaused()) {
     new Notification(visualTimer.title);
